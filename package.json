@@ -1,8 +1,7 @@
 {
   "name": "dsh-writeguard",
   "version": "0.2.0",
-  "private": true,
-  "description": "写者协作：跨会话路径租约锁 + 写入拦截 + 留言板/在场/排队 + 浏览器面板。",
+  "description": "跨会话写锁与写者协作：占锁/释放/查看，留言板、在场心跳、排队等锁，以及一个网页面板。Cross-session write locks with a coordination board and a web panel for DeepSeek Harness.",
   "license": "MIT",
   "type": "module",
   "main": "index.js",
@@ -20,18 +19,19 @@
   "files": [
     "index.js",
     "client.js",
-    "lib",
-    "bin",
-    "dev",
-    "locale",
-    "cordis.patch.yml",
+    "lib/",
+    "bin/",
+    "locale/",
     "icon.svg",
-    "README.md"
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
   ],
   "scripts": {
     "test": "node dev/smoke.mjs"
   },
   "engines": {
+    "node": ">=20",
     "dsh": ">=0.2.2-rc.3"
   },
   "dsh": {
@@ -51,5 +51,18 @@
   "homepage": "https://github.com/ziyepei06/dsh-writeguard",
   "bugs": {
     "url": "https://github.com/ziyepei06/dsh-writeguard/issues"
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "file-lock",
+    "concurrency",
+    "lock",
+    "multi-agent",
+    "coordination"
+  ],
+  "publishConfig": {
+    "access": "public"
   }
 }
