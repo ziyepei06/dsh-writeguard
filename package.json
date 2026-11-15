@@ -43,5 +43,13 @@
       "immediately": true,
       "inject": []
     }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ziyepei06/dsh-writeguard.git"
+  },
+  "homepage": "https://github.com/ziyepei06/dsh-writeguard",
+  "bugs": {
+    "url": "https://github.com/ziyepei06/dsh-writeguard/issues"
   }
 }

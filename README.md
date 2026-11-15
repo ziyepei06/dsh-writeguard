@@ -119,3 +119,7 @@ CI 定义在 [`dev/ci/test.yml`](dev/ci/test.yml)（Node 20/22/24 三个版本�
 它没有被放进 `.github/workflows/` 是因为发布用的 OAuth token 缺 `workflow` scope；
 授权后 `mkdir -p .github/workflows && git mv dev/ci/test.yml .github/workflows/test.yml`
 即可启用。
+
+## 仓库
+
+<https://github.com/ziyepei06/dsh-writeguard>
