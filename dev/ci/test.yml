@@ -1,0 +1,25 @@
+name: test
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        node: [20, 22, 24]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+      - name: lock store
+        run: node dev/smoke.mjs
+      - name: tool wiring and pre-execute guard
+        run: node dev/apply-test.mjs
+      - name: coordination board, presence and routes
+        run: node dev/board-test.mjs

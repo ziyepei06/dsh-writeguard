@@ -107,6 +107,15 @@ config:
 
 ## 测试
 
+无依赖，Node 20+ 直接跑：
+
 ```bash
-node dev/smoke.mjs   # 24 项：路径重叠、冲突、所有权、过期/死进程回收、并发抢占
+node dev/smoke.mjs       # 24 项：路径重叠、冲突、所有权、过期/死进程回收、并发抢占
+node dev/apply-test.mjs  # 15 项：工具注册、pre-execute 放行/拒绝、apply_patch 目标解析
+node dev/board-test.mjs  # 20 项：留言板、在场过期、两个面板路由、wait 超时
 ```
+
+CI 定义在 [`dev/ci/test.yml`](dev/ci/test.yml)（Node 20/22/24 三个版本跑上面三组）。
+它没有被放进 `.github/workflows/` 是因为发布用的 OAuth token 缺 `workflow` scope；
+授权后 `mkdir -p .github/workflows && git mv dev/ci/test.yml .github/workflows/test.yml`
+即可启用。
