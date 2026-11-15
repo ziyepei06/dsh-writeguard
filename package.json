@@ -1,0 +1,47 @@
+{
+  "name": "dsh-writeguard",
+  "version": "0.2.0",
+  "private": true,
+  "description": "写者协作：跨会话路径租约锁 + 写入拦截 + 留言板/在场/排队 + 浏览器面板。",
+  "license": "MIT",
+  "type": "module",
+  "main": "index.js",
+  "icon": "./icon.svg",
+  "bin": {
+    "wg": "./bin/wg.mjs"
+  },
+  "exports": {
+    ".": "./index.js",
+    "./lib/store": "./lib/store.js",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json",
+    "./client": "./client.js"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "lib",
+    "bin",
+    "dev",
+    "locale",
+    "cordis.patch.yml",
+    "icon.svg",
+    "README.md"
+  ],
+  "scripts": {
+    "test": "node dev/smoke.mjs"
+  },
+  "engines": {
+    "dsh": ">=0.2.2-rc.3"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": []
+    }
+  }
+}

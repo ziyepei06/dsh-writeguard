@@ -1,0 +1,9 @@
+# dsh-writeguard 的 profile patch 层：插入一条 Loader entry。
+# 锁目录与租期可在此覆盖；enforce: false 只记录不拦截。
+- insert:
+    - id: writeguard
+      name: 'dsh-writeguard'
+      config:
+        ttlMinutes: 15
+        lockDir: .writeguard
+        enforce: true

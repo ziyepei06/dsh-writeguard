@@ -1,0 +1,7 @@
+{
+  "meta": {
+    "title": "Writer coordination",
+    "description": "Cross-session path leases plus write interception, a message board, presence, and a browser panel.",
+    "detail": "When two sessions write the same directory the last writer silently wins. writeguard leases paths, denies conflicting writes with the holder named, and lets writers coordinate through a board, presence heartbeats, and lock waiting."
+  }
+}
